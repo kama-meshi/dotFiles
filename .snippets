@@ -1,0 +1,32 @@
+
+# 起動時刻関連
+[マシンの起動時刻を取得する] last reboot | head -20
+[マシンの終了時刻を取得する] last shutdown | head -20
+# Date関連
+[現在時刻のUnixtimeを取得] date +%s
+[Unixtimeから日付へ変更] date -r $UTIME
+# find
+[ファイル名で検索してコマンド実行] find . -name "*.txt" -exec wc -l {} \;
+# adb関連
+[Activityを開始] adb shell am start PKG/ACTIVITY
+[Broadcastを送信] adb shell am broadcast -a ACTION
+[Activityの一覧を確認] adb shell dumpsys activity activities
+[HOMEキーイベントを送る] adb shell input keyevent 3
+[BACKキーイベントを送る] adb shell input keyevent 4
+# cURL
+[サーバーのステータスコードを確認] curl -LI http://www.rcsc.co.jp -o /dev/null -w '%{http_code}' -s
+# httpbin(http://httpbin.org)
+[GIPを確認] curl http://httpbin.org/ip
+[UAを確認] curl http://httpbin.org/user-agent
+[HEADERを確認] curl http://httpbin.org/headers
+[任意のステータスコードを受信] curl http://httpbin.org/status/400
+# ラーメンタイマー
+[タイマー] sleep 180 && osascript -e "display notification \"It's TIME\" sound name \"Pop\" with title \"CUI Timer\""
+# ImageMagic
+[画像ファイルをリサイズ（%）] convert -geometry 50% "${filename}.png" "${filename}.resized.png"
+[画像ファイルをリサイズ（SIZE）] convert -geometry 400x300 "${filename}.png" "${filename}.resized.png"
+[カレントディレクトリ内のpngファイルを一括リサイズ] for f in ./*.png;do convert -geometry 50% "$f" "${f%.*}.resized.png";done
+# Utility
+[バイトコード確認] od -c
+[MD5ハッシュを計算（文字列）] openssl md5 <(echo "String or file") 
+[MD5ハッシュを計算（ファイル）] openssl md5 file 
