@@ -1,0 +1,12 @@
+{
+    "Keymap": {
+        "M-v": "peco.SelectPreviousPage",
+        "C-v": "peco.SelectNextPage"
+    },
+    "CustomMatcher": {
+        "Migemo": [
+            "/Users/ogimoto/.go/bin/migemogrep",
+            "$QUERY"
+        ]
+    }
+}
