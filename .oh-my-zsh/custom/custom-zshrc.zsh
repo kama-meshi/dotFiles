@@ -1,7 +1,4 @@
 # Exports
-export ANDROID_SDK=~/Documents/30.APP_FILES/AndroidSDK
-export ANDROID_NDK=~/Documents/30.APP_FILES/AndroidNDK
-export PATH="$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools"
 export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 export SVN_EDITOR="vi"
@@ -25,8 +22,8 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^p" history-beginning-search-backward-end
 bindkey "^n" history-beginning-search-forward-end
-bindkey "^[^h" run-help
-bindkey "^[h" backward-kill-word
+bindkey "^[^H" run-help
+bindkey "[^H" backward-kill-word
 
 
 # Alias
@@ -45,7 +42,6 @@ alias f="open ."
 alias ctags="/usr/local/bin/ctags"
 alias sed="gsed"
 alias emacs="emacsclient -nw"
-alias git='hub'
 
 # Functions
 pass2clip(){
@@ -63,10 +59,6 @@ have(){
   else
     return 1
   fi
-}
-redmine_my_issues(){
-  curl http://redmine.rcsc.co.jp/issues.json\?key\=18ca6c256aa6d0cddca507cfe70ea92c8e1da4db | jq ".issues[] | select(.assigned_to.name == \"Yuki Ogimoto\") | { desc:.description, subject:.subject}"
-  return
 }
 dic(){
   open dict:///$1
@@ -101,22 +93,6 @@ zle -N pbcopy-buffer
 bindkey '^x^p' pbcopy-buffer
 
 # Valiable
-POCKET=~/Documents/00.POCKET
-readonly POCKET
-TODO=~/Documents/10.TODO
-readonly TODO
-DOING=~/Documents/11.DOING
-readonly DOING
-DONE=~/Documents/12.DONE
-readonly DONE
-RCS_SVN=~/Documents/20.RCS_SVN
-readonly RCS_SVN
-APP_FILES=~/Documents/30.APP_FILES
-readonly APP_FILES
-WORK=~/Documents/99.WORK
-readonly WORK
-MSG_POOL=~/Documents/99.MSG_POOL
-readonly MSG_POOL
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -125,7 +101,8 @@ compdef colorsvn=svn
 
 # Setting
 chpwd(){ ls }
-#source /usr/local/share/zsh/site-functions/*
+. `brew --prefix`/etc/profile.d/z.sh
+source /usr/local/share/zsh/site-functions/*
 
 # cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
