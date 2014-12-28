@@ -6,6 +6,7 @@ export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 export SVN_EDITOR="vi"
 export GOPATH=~/.go
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Variable
 HISTSIZE=100000
@@ -24,8 +25,8 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^p" history-beginning-search-backward-end
 bindkey "^n" history-beginning-search-forward-end
-bindkey "^[^H" run-help
-bindkey "[^H" backward-kill-word
+bindkey "^[^h" run-help
+bindkey "^[h" backward-kill-word
 
 
 # Alias
@@ -44,6 +45,7 @@ alias f="open ."
 alias ctags="/usr/local/bin/ctags"
 alias sed="gsed"
 alias emacs="emacsclient -nw"
+alias git='hub'
 
 # Functions
 pass2clip(){
@@ -123,8 +125,7 @@ compdef colorsvn=svn
 
 # Setting
 chpwd(){ ls }
-. `brew --prefix`/etc/profile.d/z.sh
-source /usr/local/share/zsh/site-functions/*
+#source /usr/local/share/zsh/site-functions/*
 
 # cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
@@ -139,3 +140,4 @@ zstyle ':completion:*' recent-dirs-insert both
 # zaw-src-history
 # bindkey '^r' zaw-history 
 
+autoload -U compinit ; compinit
