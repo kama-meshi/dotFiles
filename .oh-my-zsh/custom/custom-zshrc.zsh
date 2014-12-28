@@ -3,7 +3,6 @@ export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 export SVN_EDITOR="vi"
 export GOPATH=~/.go
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Variable
 HISTSIZE=100000
@@ -116,5 +115,3 @@ zstyle ':completion:*' recent-dirs-insert both
 # bindkey '^@' zaw-cdr 
 # zaw-src-history
 # bindkey '^r' zaw-history 
-
-autoload -U compinit ; compinit
