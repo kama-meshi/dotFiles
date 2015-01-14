@@ -120,3 +120,17 @@ function peco-kill(){
 }
 zle -N peco-kill
 bindkey '^xk' peco-kill
+
+###
+# `peco-ghq`
+###
+peco-ghq () {
+	local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+	if [ -n "$selected_dir" ]
+	then
+		BUFFER="cd ${selected_dir}"
+		zle accept-line
+	fi
+	zle clear-screen
+}
+
