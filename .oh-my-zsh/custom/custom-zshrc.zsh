@@ -41,6 +41,7 @@ alias f="open ."
 alias ctags="/usr/local/bin/ctags"
 alias sed="gsed"
 alias emacs="emacsclient -nw"
+alias git="hub"
 
 # Functions
 pass2clip(){
@@ -94,14 +95,15 @@ bindkey '^x^p' pbcopy-buffer
 # Valiable
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 fpath=(/usr/local/share/zsh-completions $fpath)
+#fpath=(/usr/share/zsh/${ZSH_VERSION}/functions $fpath)
 
 # Compdef
 compdef colorsvn=svn
 
 # Setting
 chpwd(){ ls }
-. `brew --prefix`/etc/profile.d/z.sh
-source /usr/local/share/zsh/site-functions/*
+# . `brew --prefix`/etc/profile.d/z.sh
+#source /usr/local/share/zsh/site-functions/*
 
 # cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
@@ -115,3 +117,6 @@ zstyle ':completion:*' recent-dirs-insert both
 # bindkey '^@' zaw-cdr 
 # zaw-src-history
 # bindkey '^r' zaw-history 
+
+autoload -Uz compinit
+compinit -u
