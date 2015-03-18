@@ -55,8 +55,11 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools"
+if [[ "x${PATH}" = "x" ]]; then
+  export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+else
+  export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${PATH}"
+fi
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
