@@ -58,7 +58,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ "x${PATH}" = "x" ]]; then
   export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 else
-  export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${PATH}"
+  export PATH="${PATH}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 fi
 # export MANPATH="/usr/local/man:$MANPATH"
 
