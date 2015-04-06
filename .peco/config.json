@@ -3,10 +3,10 @@
         "M-v": "peco.SelectPreviousPage",
         "C-v": "peco.SelectNextPage"
     },
-    "CustomMatcher": {
-        "Migemo": [
-            "migemogrep",
-            "$QUERY"
-        ]
+    "CustomFilter": {
+        "Migemo": {
+            "Cmd": "migemogrep",
+            "Args": [ "$QUERY" ]
+        }
     }
 }
