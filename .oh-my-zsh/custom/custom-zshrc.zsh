@@ -42,6 +42,7 @@ alias ctags="/usr/local/bin/ctags"
 alias sed="gsed"
 alias emacs="emacsclient -nw"
 alias git="hub"
+alias -g PP=" | peco"
 
 # Functions
 pass2clip(){
