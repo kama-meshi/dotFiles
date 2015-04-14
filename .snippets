@@ -31,3 +31,4 @@
 [MD5ハッシュを計算（文字列）] openssl md5 <(echo "String or file") 
 [MD5ハッシュを計算（ファイル）] openssl md5 file 
 [SHA256ハッシュを計算（文字列）] echo -n "$str" | openssl dgst -sha256
+[.DS_StoreなどMacの不要ファイルを削除] find ./ \( -name ".DS_Store" -or -name "._*" \) -print -exec rm {} \;
