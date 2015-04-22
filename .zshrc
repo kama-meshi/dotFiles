@@ -60,6 +60,8 @@ if [[ "x${PATH}" = "x" ]]; then
 else
   export PATH="${PATH}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 fi
+HISTSIZE=50000
+SAVEHIST=50000
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
