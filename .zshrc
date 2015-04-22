@@ -51,18 +51,14 @@ HIST_STAMPS="mm/dd/yyyy"
 #plugins=(brew brew-cask svn colorsvn svn-fast-info web-search osx tmux emoji-clock common-aliases peco zsh-syntax-highlighting)
 plugins=(brew brew-cask svn colorsvn svn-fast-info web-search osx tmux emoji-clock common-aliases peco)
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
-if [[ "x${PATH}" = "x" ]]; then
-  export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-else
-  export PATH="${PATH}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-fi
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 HISTSIZE=50000
 SAVEHIST=50000
 # export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
