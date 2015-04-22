@@ -1,6 +1,6 @@
 # Exports
 export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
-export LESS=' -R '
+export LESS='-qRn'
 export SVN_EDITOR="vi"
 export GOPATH=~/.go
 
