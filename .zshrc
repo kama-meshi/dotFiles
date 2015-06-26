@@ -49,7 +49,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(brew brew-cask svn colorsvn svn-fast-info web-search osx tmux emoji-clock common-aliases peco zsh-syntax-highlighting)
-plugins=(brew brew-cask svn colorsvn svn-fast-info web-search osx tmux emoji-clock common-aliases peco)
+plugins=(brew brew-cask svn colorsvn svn-fast-info web-search osx emoji-clock common-aliases peco git github)
 
 # User configuration
 
