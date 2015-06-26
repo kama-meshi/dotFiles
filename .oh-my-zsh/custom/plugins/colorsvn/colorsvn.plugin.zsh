@@ -1,0 +1,2 @@
+# Compdef
+compdef colorsvn=svn

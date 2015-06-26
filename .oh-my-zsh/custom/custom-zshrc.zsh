@@ -98,9 +98,6 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 fpath=(/usr/local/share/zsh-completions $fpath)
 #fpath=(/usr/share/zsh/${ZSH_VERSION}/functions $fpath)
 
-# Compdef
-compdef colorsvn=svn
-
 # Setting
 chpwd(){ ls }
 # . `brew --prefix`/etc/profile.d/z.sh
