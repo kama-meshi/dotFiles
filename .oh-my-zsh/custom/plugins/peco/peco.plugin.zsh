@@ -125,12 +125,12 @@ bindkey '^xk' peco-kill
 # `peco-ghq`
 ###
 peco-ghq () {
-	local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
-	if [ -n "$selected_dir" ]
-	then
-		BUFFER="cd ${selected_dir}"
-		zle accept-line
-	fi
-	zle clear-screen
+    local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
 }
+zle -N peco-ghq
 
