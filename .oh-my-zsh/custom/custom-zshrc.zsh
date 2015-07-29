@@ -40,13 +40,13 @@ alias adb_restart_server="adb kill-server && adb start-server"
 alias f="open ."
 alias ctags="/usr/local/bin/ctags"
 alias sed="gsed"
-alias emacs="emacsclient -nw"
 alias git="hub"
+alias vi="vim"
 alias -g PP=" | peco"
 
 # Functions
 pass2clip(){
-  G_PASS=$(pwgen 12 1 -Bync)
+  G_PASS=$(pwgen 12 1 -Bsync)
   echo -n $G_PASS | pbcopy
   echo "generated: $G_PASS"
   return
@@ -118,3 +118,4 @@ zstyle ':completion:*' recent-dirs-insert both
 
 autoload -Uz compinit
 compinit -u
+
