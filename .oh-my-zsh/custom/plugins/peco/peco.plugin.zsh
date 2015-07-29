@@ -134,3 +134,14 @@ peco-ghq () {
 }
 zle -N peco-ghq
 
+###
+# `peco-open-file`
+###
+function peco-open-file() {
+    local openFile=$(find . -type d \( -name '.svn' -o -name '.git' \) -prune -o -type f | peco --query "$LBUFFER")
+    if [ "X${openFile}" != "X" -a -f ${openFile} ]; then
+        BUFFER="open ${openFile}"
+    fi
+}
+zle -N peco-open-file
+bindkey '^xo' peco-open-file
