@@ -75,3 +75,4 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
