@@ -43,6 +43,10 @@ alias sed="gsed"
 alias git="hub"
 alias vi="vim"
 alias -g PP=" | peco"
+alias -g G=" | grep"
+alias -g L=" | less"
+alias -g C=" | pbcopy"
+alias -g T=" | tr -d '\n'"
 
 # Functions
 pass2clip(){
