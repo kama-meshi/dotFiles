@@ -133,6 +133,7 @@ peco-ghq () {
     zle clear-screen
 }
 zle -N peco-ghq
+bindkey '^xg' peco-ghq
 
 ###
 # `peco-open-file`
